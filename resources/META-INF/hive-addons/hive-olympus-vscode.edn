@@ -1,0 +1,12 @@
+{:addon/id "hive.olympus.vscode"
+ :addon/kind :addon
+ :addon/type :native
+ :addon/version "0.1.0-SNAPSHOT"
+ :addon/init-ns "hive-olympus.harness"
+ :addon/init-fn "addon-ctor"
+ :addon/config {:olympus/host "hive.vscode"}
+ :addon/capabilities #{:olympus-presenter :health-reporting}
+ :addon/dependencies #{"hive.olympus" "hive.vscode"}
+ :addon/description "Olympus in VS Code: the hive.olympus grid delivered as VS Code webview panels, lowered through hive-vessel onto hive.vscode's :vessel/target"
+ :addon/maturity :experimental
+ :addon/trust-class :foss}

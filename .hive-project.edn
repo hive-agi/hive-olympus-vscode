@@ -1,0 +1,7 @@
+{:project-id "hive-olympus-vscode"
+ :parent "hive"
+ :description "Olympus projected into VS Code: a manifest-only hive-olympus harness brick over hive.vscode's :vessel/target"
+ :license "MIT"
+ :language :clojure
+ :tags [:hive :olympus :addon :vessel :vscode :foss]
+ :carto {:source-roots ["resources" "test" "dev"]}}
