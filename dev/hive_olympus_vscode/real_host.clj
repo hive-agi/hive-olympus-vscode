@@ -15,7 +15,8 @@
             [hive-addon.mount :as mount]
             [hive-addon.mount.port :as mount-port]
             [hive-addon.protocol :as addon]
-            [clojure.pprint :as pp])
+            [clojure.pprint :as pp]
+            [hive-olympus.demo :as demo])
   (:import (java.net URI)
            (java.net.http HttpClient HttpRequest HttpResponse$BodyHandlers)
            (java.nio.file Files)
@@ -25,14 +26,9 @@
 ;; SPDX-License-Identifier: MIT
 
 (defn stub-roster
-  "N agents cycling through the statuses the grid renders."
+  "The core's demo roster of N agents."
   [n]
-  (mapv (fn [i]
-          (cond-> {:agent/id (str "demo-" i)
-                   :agent/name (str "demo-" i)
-                   :agent/status (nth [:working :blocked :error :idle] (mod i 4))}
-            (even? i) (assoc :agent/task (str "task " i))))
-        (range 1 (inc n))))
+  (demo/roster n))
 
 (defonce agent-count (atom 6))
 
