@@ -3,21 +3,21 @@
  ;; Sibling checkouts during development go in the untracked local.deps.edn:
  ;;   clojure -Sdeps "$(cat local.deps.edn)" -M:test
  :deps {org.clojure/clojure {:mvn/version "1.12.6"}
-        io.github.hive-agi/hive-olympus {:mvn/version "0.1.9"}}
+        io.github.hive-agi/hive-olympus {:mvn/version "0.1.10"}}
 
  :aliases
  {;; hive-vessel: the :host-target route lowers through its standard registry.
   ;; In a hive it arrives with hive-vscode; the stub host here has to bring it.
   :test {:extra-paths ["test"]
-         :extra-deps {io.github.hive-agi/hive-vessel {:mvn/version "0.1.11"}}
+         :extra-deps {io.github.hive-agi/hive-vessel {:mvn/version "0.1.12"}}
          :jvm-opts ["-Xmx1g"]
          :main-opts ["-m" "hive-olympus-vscode.test-runner"]}
 
   ;; The real host, isolated in its own JVM (dev/hive_olympus_vscode/real_host.clj):
   ;;   clojure -Sdeps "$(cat local.deps.edn)" -M:real-host
   :real-host {:extra-paths ["dev"]
-              :extra-deps {io.github.hive-agi/hive-vscode {:mvn/version "0.1.8"}
-                           io.github.hive-agi/hive-vessel {:mvn/version "0.1.11"}
+              :extra-deps {io.github.hive-agi/hive-vscode {:mvn/version "0.1.9"}
+                           io.github.hive-agi/hive-vessel {:mvn/version "0.1.12"}
                            org.clojure/data.json {:mvn/version "2.5.2"}}
               :jvm-opts ["-Xmx1g"]
               :main-opts ["-m" "hive-olympus-vscode.real-host"]}}}
