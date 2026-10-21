@@ -9,7 +9,7 @@
  {;; hive-vessel: the :host-target route lowers through its standard registry.
   ;; In a hive it arrives with hive-vscode; the stub host here has to bring it.
   :test {:extra-paths ["test"]
-         :extra-deps {io.github.hive-agi/hive-vessel {:mvn/version "0.1.17"}}
+         :extra-deps {io.github.hive-agi/hive-vessel {:mvn/version "0.1.18"}}
          :jvm-opts ["-Xmx1g"]
          :main-opts ["-m" "hive-olympus-vscode.test-runner"]}
 
@@ -17,7 +17,7 @@
   ;;   clojure -Sdeps "$(cat local.deps.edn)" -M:real-host
   :real-host {:extra-paths ["dev"]
               :extra-deps {io.github.hive-agi/hive-vscode {:mvn/version "0.1.10"}
-                           io.github.hive-agi/hive-vessel {:mvn/version "0.1.17"}
+                           io.github.hive-agi/hive-vessel {:mvn/version "0.1.18"}
                            org.clojure/data.json {:mvn/version "2.5.2"}}
               :jvm-opts ["-Xmx1g"]
               :main-opts ["-m" "hive-olympus-vscode.real-host"]}}}
